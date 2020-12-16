@@ -11,7 +11,7 @@ func assertEquals(got string, want string, t *testing.T) {
 	}
 }
 
-func Test_PrintTannenbaum(t *testing.T) {
+func Test_PrintChristmasTree(t *testing.T) {
 	t.Run("a small tannenbaum with 1 line", func(t *testing.T) {
 		got := PrintChristmasTree(1)
 		want := "*"
@@ -19,12 +19,30 @@ func Test_PrintTannenbaum(t *testing.T) {
 	})
 	t.Run("a not so small tannenbaum with 2 lines", func(t *testing.T) {
 		got := PrintChristmasTree(2)
-		want := " * \n***"
+		want := " * \n" +
+			"***"
 		assertEquals(got, want, t)
 	})
 	t.Run("a tannenbaum with 3 lines", func(t *testing.T) {
 		got := PrintChristmasTree(3)
-		want := "  *  \n *** \n*****"
+		want := "  *  \n" +
+			" *** \n" +
+			"*****"
+		assertEquals(got, want, t)
+	})
+	t.Run("a giant tannenbaum with 10 lines", func(t *testing.T) {
+		got := PrintChristmasTree(10)
+		want :=
+			"         *         \n" +
+				"        ***        \n" +
+				"       *****       \n" +
+				"      *******      \n" +
+				"     *********     \n" +
+				"    ***********    \n" +
+				"   *************   \n" +
+				"  ***************  \n" +
+				" ***************** \n" +
+				"*******************"
 		assertEquals(got, want, t)
 	})
 }
