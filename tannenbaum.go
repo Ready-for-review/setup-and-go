@@ -1,22 +1,18 @@
 package main
 
-func PrintTannenbaum(numberOfLines int) (tannenbaum string) {
-
-	for i := 1; i <= numberOfLines; i++ {
-		// numberOfLines - i
-		leerzeichen := ""
-		for k := 1; k <= numberOfLines-i; k++ {
-			leerzeichen += " "
+func PrintChristmasTree(numberOfLines int) (christmasTree string) {
+	for line := 1; line <= numberOfLines; line++ {
+		spaces := ""
+		for space := 1; space <= numberOfLines-line; space++ {
+			spaces += " "
 		}
-		// Zeile (i)
-		sternchen := ""
-		// Sternchen i*2-1
-		for j := 1; j <= i*2-1; j++ {
-			sternchen += "*"
+		stars := ""
+		for star := 1; star <= line*2-1; star++ {
+			stars += "*"
 		}
-		tannenbaum += leerzeichen + sternchen + leerzeichen
-		if i < numberOfLines {
-			tannenbaum += "\n"
+		christmasTree += spaces + stars + spaces
+		if line < numberOfLines {
+			christmasTree += "\n"
 		}
 	}
 	return
