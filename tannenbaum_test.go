@@ -4,11 +4,17 @@ import (
 	"testing"
 )
 
-func Test_PrintTannenbaum(t *testing.T) {
-	got := PrintTannenbaum(1)
-	want := "*"
-
+func assertEquals(got string, want string, t *testing.T) {
+	t.Helper()
 	if got != want {
 		t.Errorf("got %v but wanted %v", got, want)
 	}
+}
+
+func Test_PrintTannenbaum(t *testing.T) {
+	t.Run("a small tannenbaum with 1 line", func(t *testing.T) {
+		got := PrintTannenbaum(1)
+		want := "*"
+		assertEquals(got, want, t)
+	})
 }
