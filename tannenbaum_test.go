@@ -17,4 +17,9 @@ func Test_PrintTannenbaum(t *testing.T) {
 		want := "*"
 		assertEquals(got, want, t)
 	})
+	t.Run("a not so small tannenbaum with 2 line", func(t *testing.T) {
+		got := PrintTannenbaum(2)
+		want := " * \n***"
+		assertEquals(got, want, t)
+	})
 }
